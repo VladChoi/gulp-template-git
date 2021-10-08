@@ -1,0 +1,44 @@
+// Text
+@font-face {
+  font-family: "SamsungOneCyrillic-400";
+  font-display: swap;
+  src: url("../fonts/SamsungOneCyrillic-400_v1.0.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "SamsungOneCyrillic-600";
+  font-display: swap;
+  src: url("../fonts/SamsungOneCyrillic-600_v1.0.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "SamsungOneCyrillic-700";
+  font-display: swap;
+  src: url("../fonts/SamsungOneCyrillic-700_v1.0.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "SamsungOneCyrillic-800";
+  font-display: swap;
+  src: url("../fonts/SamsungOneCyrillic-800_v1.0.ttf") format("truetype");
+  font-weight: 800;
+}
+
+
+// Titles
+@font-face {
+  font-family: "SamsungSharpSans-Regular";
+  font-display: swap;
+  src: url("../fonts/SamsungSharpSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "SamsungSharpSans-Bold";
+  font-display: swap;
+  src: url("../fonts/SamsungSharpSans-Bold.ttf") format("truetype");
+  font-weight: 800;
+}

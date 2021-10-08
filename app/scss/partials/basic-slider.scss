@@ -1,0 +1,152 @@
+/* ---------- BASIC SLIDER STARTS ---------- */
+.basic-slider__slides {
+  position: relative;
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 50px;
+  font-size: 30px;
+  @include centering-y();
+  z-index: 200;
+}
+
+.prev-arrow {
+  left: 3%;
+}
+.next-arrow {
+  right: 3%;
+}
+.basic-slider__triggers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e4ded7;
+}
+
+.call-for-action {
+  display: inline-block;
+  font-family: $font-title;
+  @include adaptive-font(26, 19);
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.triggers-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.label-wrapper {
+  padding: 0 30px 30px;
+  label {
+    display: flex;
+    justify-content: center;
+    font-family: $font-title;
+    font-weight: bold;
+    @include adaptive-font(18, 16);
+    width: 150px;
+    padding: 20px;
+    cursor: pointer;
+
+    transition: background-color 0.33s ease-in-out;
+  }
+  &:nth-child(1) {
+    label {
+      background-color: #171717;
+      color: white;
+      &:hover {
+        background-color: lighten(#171717, 20%);
+      }
+    }
+  }
+  &:nth-child(2) {
+    label {
+      background-color: #33544e;
+      color: white;
+      &:hover {
+        background-color: lighten(#33544e, 5%);
+      }
+    }
+  }
+  &:nth-child(3) {
+    label {
+      background-color: #dcd5cc;
+      color: #33544e;
+      &:hover {
+        background-color: lighten(#dcd5cc, 5%);
+      }
+    }
+  }
+  &:nth-child(4) {
+    label {
+      background-color: #cbb0d3;
+      color: #33544e;
+      &:hover {
+        background-color: lighten(#cbb0d3, 5%);
+      }
+    }
+  }
+}
+
+.slides-wrapper {
+  position: relative;
+  //border: 1px solid rebeccapurple;
+  height: 400px;
+  overflow-x: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 1000%;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background-color: #120103;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  transition: left 0s .75s;
+}
+
+.slide-1 {
+  background-color: hotpink;
+}
+.slide-2 {
+  background-color: lightskyblue;
+}
+.slide-3 {
+  background-color: purple;
+}
+.slide-4 {
+  background-color: peru;
+}
+
+#input-1:checked + .slide-1 {
+  left: 0;
+  z-index: 100;
+  transition: left .65s ease-out;
+}
+#input-2:checked + .slide-2 {
+  left: 0;
+  z-index: 100;
+  transition: left .65s ease-out;
+}
+#input-3:checked + .slide-3 {
+  left: 0;
+  z-index: 100;
+  transition: left .65s ease-out;
+}
+#input-4:checked + .slide-4 {
+  left: 0;
+  z-index: 100;
+  transition: left .65s ease-out;
+}
+/* ---------- BASIC SLIDER ENDS ------------ */

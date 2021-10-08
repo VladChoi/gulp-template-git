@@ -1,0 +1,93 @@
+.hystmodal {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 30px 0;
+
+  visibility: hidden;
+
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; // для сенсорных экранов (в основном для Safari)
+  z-index: 100;
+}
+
+.hystmodal__wrap {
+  flex-shrink: 0;
+  flex-grow: 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 100%;
+  margin: auto;
+}
+
+.hystmodal__window {
+  flex-shrink: 0; // чтобы в IE11 не обрезался фон окна, если оно больше высоты окна браузера
+  flex-grow: 0;
+
+  width: 600px;
+  max-width: 100%;
+  margin: 50px 0;
+
+  background-color: #fff;
+  overflow: visible;
+  opacity: 0;
+
+  transition: transform 0.15s ease 0s, opacity 0.15s ease 0s;
+  transform: scale(0.9);
+}
+
+.hystmodal--active {
+  visibility: visible;
+}
+.hystmodal--active .hystmodal__window {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.hystmodal__shadow {
+  display: block;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  border: none;
+
+  background-color: #000;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+
+  z-index: 98;
+
+  transition: opacity 0.15s ease;
+}
+.hystmodal__shadow--show {
+  pointer-events: auto;
+  opacity: 0.6;
+}
+
+// отключение прокрутки страницы при открытом модальном окне
+
+.hystmodal__opened {
+  position: fixed;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}

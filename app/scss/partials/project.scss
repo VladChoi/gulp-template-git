@@ -1,0 +1,186 @@
+/* ----------- SHARED STARTS---------- */
+.main-container {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+.main-section {
+  width: 100%;
+  margin: 0 auto;
+  padding: 25px 0;
+}
+
+.main-info {
+  display: flex;
+  align-items: center;
+}
+
+.main-info__left,
+.main-info__right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.img-basic {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.img-basic--cover {
+  object-fit: cover;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.main-title--h1,
+.main-title--h2,
+.main-title--h3,
+.main-title--h4,
+.main-title--h5 {
+  font-family: $font-title;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.main-title--left {
+  text-align: left;
+}
+
+.main-title--h1 {
+  @include adaptive-font(46, 28);
+}
+
+.main-title--h2 {
+  @include adaptive-font(41.4, 25.2);
+}
+
+.main-title--h3 {
+  @include adaptive-font(37.26, 22.68);
+}
+
+.main-title--h4 {
+  @include adaptive-font(33.534, 20.412);
+}
+
+.main-title--h5 {
+  @include adaptive-font(30.181, 18.371);
+}
+
+.main-text {
+  font-family: $font-text;
+  @include adaptive-font(22, 16);
+  text-align: center;
+
+  &:not(.main-text:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.sm-btn-basic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  width: 2vw;
+  height: 40px;
+  border-radius: 22px;
+  border: 2px solid #171717;
+  color: #171717;
+  margin: 30px 0 0;
+  @include adaptive-font(18, 16);
+
+  transition: background-color 0.23s ease-out;
+  &:hover,
+  &:focus {
+    background-color: lighten(#171717, 70%);
+  }
+  &:active {
+    background-color: lighten(#171717, 30%);
+  }
+}
+
+.legal-text {
+  font-family: $font-text;
+  text-align: left;
+  color: #a0a0a0;
+  font-size: 12px;
+
+  a {
+    color: blue;
+  }
+}
+/* ----------- SHARED ENDS---------- */
+
+
+
+
+/* ---------- SWIPER STARTS---------- */
+
+/* ---------- SWIPER ENDS------------ */
+
+
+
+
+/* ---------- MEDIA STARTS---------- */
+
+// from 320px to 413px
+@include media-413 {}
+
+// from 414px to 767px
+@include media-767 {}
+
+// from 768px to 1023px
+@include media-1023 {}
+
+// from 1024px to 1199px
+@include media-1199 {}
+
+// from 1200 to 1440
+@include media-1440 {}
+
+// above 1440px
+@include media-1441 {
+  .main-title--h1 {
+    font-size: 46px;
+  }
+
+  .main-title--h2 {
+    font-size: 41.4px;
+  }
+
+  .main-title--h3 {
+    font-size: 37.26px;
+  }
+
+  .main-title--h4 {
+    font-size: 33.534px;
+  }
+
+  .main-title--h5 {
+    font-size: 30.181px;
+  }
+
+  .main-text {
+    font-size: 22px;
+  }
+
+  .call-for-action {
+    font-size: 18px;
+  }
+
+  .promo-rules__text {
+    font-size: 22px;
+  }
+}
+/* ----------- MEDIA ENDS ----------- */
