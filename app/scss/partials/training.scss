@@ -1,58 +1,65 @@
 .sub-container {
+  position: absolute;
   height: 100vh;
+  left: 0;
+  width: 100%;
+  clip: rect(0, auto, auto, 0);
+  overflow: hidden;
+
   font-family: sans-serif;
   font-weight: bold;
-  @include adaptive-font(40, 30);
+  @include adaptive-font(46, 36);
+
+  /* Хак для Safari */
+  -webkit-mask-image: -webkit-linear-gradient(top, #ffffff 0%,#ffffff 100%);
 }
 
 .sub-container--solid {
-  background-color: #fff;
+  background: #fff;
+  top: 0;
 
   h1 {
-    background-image: url("../img/example-5.jpg");
-    background-size: 100vw auto;
-    background-position: center;
+    background: url("../img/example-5.jpg") center;
+    background-size: 100vh auto;
+    z-index: 10;
 
-    /* обрезать фон текста */
+    /* обрезать фон */
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    background-clip: text;
-
-    /* фоллбэк для браузеров, не поддерживающих обрезку фона */
-    color: #000;
   }
 }
 
-.sub-container--img {
-  background-image: url("../img/example-5.jpg");
-  background-repeat: no-repeat;
-  background-size: 100vw auto;
-  background-position: center;
-  background-attachment: fixed;
-  color: #fff;
-  h1 {
-    color: #fff;
-  }
-}
-
-.sub-container--img {
-  color: #fff;
-}
-
-/*.title-wrapper {
-  position: fixed;
+.title-wrapper {
   display: block;
+  position: fixed;
   margin: auto;
   width: 100%;
 
-  !* вертикальное центрирование текста *!
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
   transform: translateY(-50%);
 
   h1 {
     text-align: center;
   }
-}*/
+}
+
+.title-solid {
+
+}
+
+.sub-container--img {
+  top: 100%;
+  background-image: url("../img/example-5.jpg");
+  background-size: 100vw auto;
+  background-position: center;
+  background-attachment: fixed;
+
+  h1 {
+    color: #fff;
+    text-shadow: 2px 2px rgba(0,0,0,0.36);
+  }
+}
 
