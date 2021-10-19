@@ -1,0 +1,90 @@
+/* ---------- ITEMS GRID DISPLAY STARTS---------- */
+
+/* item-card starts */
+.item-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.img-basic--card {
+  display: block;
+  margin: 0 auto;
+  max-width: 270px;
+  //height: 320px;
+  width: 100%;
+}
+
+.item-card__name {
+  font-family: $font-text;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.item-card__name--number {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.item-card__prices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-card__price--old {
+  position: relative;
+  font-family: $font-text;
+  font-size: 18px;
+  color: gray;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: -3px;
+    bottom: 50%;
+    transform: rotate(-14deg);
+    height: 2px;
+    background-color: black;
+    width: 100%;
+  }
+}
+
+.item-card__price--new {
+  color: red;
+  font-family: $font-text;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.main-button--blue {
+  background-color: #275efe;
+}
+/* item-card ends */
+
+
+/* grid starts */
+.item-cards {
+  display: grid;
+  grid-template-rows: auto;
+  column-gap: 1em;
+  row-gap: 1em;
+  width: 80%;
+}
+
+.item-cards--1 {
+  grid-template-areas: "item-1 item-2 item-3";
+}
+
+.item-cards--1 {
+  grid-area: item-1;
+}
+/* grid ends */
+
+/* ---------- ITEMS GRID DISPLAY ENDS------------ */

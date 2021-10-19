@@ -1,0 +1,58 @@
+.sub-container {
+  height: 100vh;
+  font-family: sans-serif;
+  font-weight: bold;
+  @include adaptive-font(40, 30);
+}
+
+.sub-container--solid {
+  background-color: #fff;
+
+  h1 {
+    background-image: url("../img/example-5.jpg");
+    background-size: 100vw auto;
+    background-position: center;
+
+    /* обрезать фон текста */
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* фоллбэк для браузеров, не поддерживающих обрезку фона */
+    color: #000;
+  }
+}
+
+.sub-container--img {
+  background-image: url("../img/example-5.jpg");
+  background-repeat: no-repeat;
+  background-size: 100vw auto;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  h1 {
+    color: #fff;
+  }
+}
+
+.sub-container--img {
+  color: #fff;
+}
+
+/*.title-wrapper {
+  position: fixed;
+  display: block;
+  margin: auto;
+  width: 100%;
+
+  !* вертикальное центрирование текста *!
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+  h1 {
+    text-align: center;
+  }
+}*/
+

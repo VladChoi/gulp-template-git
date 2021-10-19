@@ -1,38 +1,57 @@
 let slideIndex = 1;
-showSlides(slideIndex);
 
-function prevSlide () {
-  showSlides(slideIndex -= 1);
+showSlides(slideIndex, getSliderOneItems());
+
+function currentSlide(n, currentObj) {
+  showSlides(slideIndex = n, currentObj);
 }
 
-function nextSlide () {
-  showSlides(slideIndex += 1);
+function prevSlide(currentObj) {
+  showSlides(slideIndex -= 1, currentObj);
 }
 
-function currentSlide (n) {
-  showSlides(slideIndex = n)
+function nextSlide(currentObj) {
+  showSlides(slideIndex += 1, currentObj);
 }
 
-function showSlides (n) {
-  const slides = document.querySelectorAll('.js-slider__item');
-  const triggers = document.querySelectorAll('.js-slider__trigger');
-
-  if (n > slides.length) {
+function showSlides(n, obj) {
+  if (n > obj.slides.length) {
     slideIndex = 1;
   }
-
   if (n < 1) {
-    slideIndex = slides.length;
+    slideIndex = obj.slides.length;
   }
 
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = 'none';
+  for (let i = 0; i < obj.slides.length; i++) {
+    obj.slides[i].style.display = 'none';
   }
 
-  for (let i = 0; i < triggers.length; i++) {
-    triggers[i].className = triggers[i].className.replace(' active', '');
+  // способ 1 выделения активного триггера
+/*  for (let i = 0; i < obj.triggers.length; i++) {
+    obj.triggers[i].addEventListener('click', () => {
+      obj.triggers.forEach(trigger => {
+        trigger.classList.remove('active');
+      })
+      obj.triggers[i].classList.add('active');
+    })
+  }*/
+
+  // способ 2 выделения активного триггера
+  for (let i = 0; i < obj.triggers.length; i++) {
+    obj.triggers[i].className = obj.triggers[i].className.replace(' active', '');
   }
 
-  slides[slideIndex - 1].style.display = 'block';
-  triggers[slideIndex - 1].className += ' active';
+  obj.slides[slideIndex - 1].style.display = 'grid';
+  // способ 2 выделения активного триггера
+  obj.triggers[slideIndex - 1].className += ' active';
+}
+
+function getSliderOneItems() {
+  const slides = document.querySelectorAll('.js-slider--1 .js-slider__item');
+  const triggers = document.querySelectorAll('.js-slider__triggers--1 .js-slider__trigger');
+
+  return {
+    slides: slides,
+    triggers: triggers,
+  }
 }

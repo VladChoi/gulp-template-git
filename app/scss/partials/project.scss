@@ -8,12 +8,16 @@
 .main-section {
   width: 100%;
   margin: 0 auto;
-  padding: 25px 0;
+  //padding: 25px 0;
 }
 
 .main-info {
   display: flex;
   align-items: center;
+}
+
+.main-info__inner {
+  display: flex;
 }
 
 .main-info__left,
@@ -22,6 +26,20 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.main-info__left {
+  padding: 30px;
+  align-items: flex-start;
+}
+
+.invert-sides {
+  .main-info__left {
+    order: 2;
+  }
+  .main-info__right {
+    order: 1;
+  }
 }
 
 .img-basic {
@@ -79,12 +97,16 @@
 
 .main-text {
   font-family: $font-text;
-  @include adaptive-font(22, 16);
-  text-align: center;
+  @include adaptive-font(18, 16);
+  line-height: 26px;
 
   &:not(.main-text:last-child) {
     margin-bottom: 20px;
   }
+}
+
+.main-text--center  {
+  text-align: center;
 }
 
 .sm-btn-basic {
@@ -133,6 +155,34 @@
 
 
 /* ---------- MEDIA STARTS---------- */
+@media screen and(max-width: 768px) {
+  .main-info__inner {
+    flex-direction: column;
+  }
+
+  .main-info__left,
+  .main-info__right {
+    width: 100%;
+  }
+
+  .main-info__left {
+    align-items: center;
+  }
+
+  .main-text {
+    text-align: center;
+    line-height: 22px;
+  }
+
+  .invert-sides {
+    .main-info__left {
+      order: 1;
+    }
+    .main-info__right {
+      order: 2;
+    }
+  }
+}
 
 // from 320px to 413px
 @include media-413 {}
@@ -172,7 +222,7 @@
   }
 
   .main-text {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .call-for-action {

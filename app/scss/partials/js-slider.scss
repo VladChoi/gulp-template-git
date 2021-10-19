@@ -1,13 +1,20 @@
 /* ---------- JS-SLIDER STARTS ---------- */
 .js-slider {
+  display: flex;
+  justify-content: center;
   position: relative;
-  width: 90%;
+  width: 100%;
   margin: 0 auto 20px auto;
 }
 
 .js-slider__img {
-  width: 100%;
+  display: block;
+  width: 60%;
+  min-width: 260px;
+  //min-width: 220px;
+  max-width: 380px;
   height: auto;
+  margin: 0 auto 10px auto;
   object-fit: cover;
 }
 
@@ -43,6 +50,7 @@
 
 .js-slider__triggers {
   text-align: center;
+  //margin-top: 25px;
 }
 
 .js-slider__trigger {
@@ -50,14 +58,15 @@
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: #ddd;
+  border: 2px solid #0185cc;
+  background-color: #fff;
   cursor: pointer;
 
   transition: background-color 0.6s ease;
 
   &:active,
   &:hover {
-    background-color: #aaa;
+    background-color: #0185cc;
   }
 
   &:not(.js-slider__trigger:last-child) {
@@ -65,7 +74,13 @@
   }
 }
 
+.js-slider__trigger.active {
+  background-color: #0185cc;
+}
+
 .js-slider__item {
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
   height: auto;
   margin: 0 auto;
@@ -74,6 +89,11 @@
   -webkit-animation-duration: 1.6s;
   animation-name: fade;
   animation-duration: 1.6s;
+
+  picture {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 @keyframes fade {
