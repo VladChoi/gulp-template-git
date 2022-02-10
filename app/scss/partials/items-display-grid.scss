@@ -1,0 +1,173 @@
+.item-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+  //border-radius: 10px;
+  //box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.item-card__img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.item-card__name {
+  font-family: $font-title;
+  font-weight: bold;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin: 20px 0;
+}
+
+.item-card__prices {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.item-card__price--old {
+  position: relative;
+  font-family: $font-title;
+  font-size: 14px;
+  font-weight: bold;
+  color: #bfbfbf;
+  padding: 8px;
+  margin-right: 2.5px;
+  z-index: 2;
+
+  &:before {
+    @include pseudo();
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #ebebeb;
+    transform: skew(170deg);
+    z-index: -1;
+    border-radius: 5px;
+  }
+}
+
+.item-card__price--new {
+  position: relative;
+  font-family: $font-title;
+  font-weight: bold;
+  font-size: 16px;
+  color: #ff0000;
+  padding: 9.08px;
+  margin-left: 2.5px;
+  z-index: 2;
+
+  &:before {
+    @include pseudo();
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #ebebeb;
+    transform: skew(170deg);
+    z-index: -1;
+    border-radius: 5px;
+  }
+}
+
+.item-cards {
+  display: grid;
+  grid-template-rows: auto;
+  column-gap: 2em;
+  row-gap: 2em;
+  width: 100%;
+  max-width: 1000px;
+  padding-bottom: 60px;
+  margin: 0 auto;
+}
+
+.item-cards--a {
+  grid-template-areas:
+          "a-1 a-2 a-3"
+          "a-4 a-5 a-6"
+          ". a-7 .";
+}
+
+.item-card--a-1 {
+  grid-area: a-1;
+}
+.item-card--a-2 {
+  grid-area: a-2;
+}
+.item-card--a-3 {
+  grid-area: a-3;
+}
+.item-card--a-4 {
+  grid-area: a-4;
+}
+.item-card--a-5 {
+  grid-area: a-5;
+}
+.item-card--a-6 {
+  grid-area: a-6  ;
+}
+.item-card--a-7 {
+  grid-area: a-7;
+}
+
+
+.item-cards--b {
+  grid-template-areas:
+          "b-1 b-2 b-3"
+          "b-4 b-5 b-6";
+}
+.item-card--b-1 {
+  grid-area: b-1
+}
+.item-card--b-2 {
+  grid-area: b-2
+}
+.item-card--b-3 {
+  grid-area: b-3
+}
+.item-card--b-4 {
+  grid-area: b-4
+}
+.item-card--b-5 {
+  grid-area: b-5
+}
+.item-card--b-6 {
+  grid-area: b-6
+}
+
+.item-cards--c {
+  grid-template-areas:
+          "c-1 c-2 c-3"
+          "c-4 c-5 c-6"
+          ". c-7 .";
+}
+.item-card--c-1 {
+  grid-area: c-1;
+}
+.item-card--c-2 {
+  grid-area: c-2;
+}
+.item-card--c-3 {
+  grid-area: c-3;
+}
+.item-card--c-4 {
+  grid-area: c-4;
+}
+.item-card--c-5 {
+  grid-area: c-5;
+}
+.item-card--c-6 {
+  grid-area: c-6  ;
+}
+.item-card--c-7 {
+  grid-area: c-7;
+}
